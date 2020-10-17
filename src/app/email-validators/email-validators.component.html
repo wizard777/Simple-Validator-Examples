@@ -1,0 +1,23 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <form [formGroup]="userEmail"  novalidate>
+            <h2>Please provide your email address</h2>
+            <div class="form-group  col-md-9  mt-4" style = " width:400px;height: 120px;">
+                <label for="primaryEmail">Primary Email:</label>
+                <input id="primaryEmail" [class.is-invalid]="primaryEmail.invalid && primaryEmail.touched"
+                    class="form-control" formControlName="primaryEmail" type= "email" />
+                    <div *ngIf="(primaryEmail.invalid && primaryEmail.touched) || primaryEmail.dirty">
+                        <small *ngIf="primaryEmail.errors?.required" class="text-danger">Primary email is required</small>
+                        <!--question mark(?) is a safe navigation operator-->
+                        <small *ngIf="primaryEmail.errors?.pattern" class="text-danger">Please provide a valid email address</small><br>
+                        <small *ngIf="primaryEmail.errors?.minlength" class="text-danger">
+                            Minimum {{ primaryEmail.errors.minlength.requiredLength}} characters</small>
+                    </div>
+            </div>
+            <button  class="btn btn-primary ml-5" (click)="onReset()">Reset</button>
+        </form>
+    </div>
+   
+</div>
+<br><br><br>

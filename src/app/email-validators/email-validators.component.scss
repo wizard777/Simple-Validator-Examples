@@ -1,0 +1,20 @@
+@import '../scss/varables.scss';
+
+input {
+  &::shadow {
+    border: solid 0.049rem $base-color;
+    border-radius: 0;
+   
+  }
+  &:focus {
+    border: solid 1px rgb(226, 224, 226);
+    &::shadow {
+      -webkit-box-shadow: 2px 2px 2px 2px rgb(226, 224, 226); /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow: 2px 2px 2px 2px rgb(226, 224, 226); /* Firefox 3.5 - 3.6 */
+      box-shadow: 2px 2px 2px 2px rgb(226, 224, 226);
+    }
+  }
+
+}
+
+
